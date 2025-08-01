@@ -17,7 +17,7 @@ function App() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          prompt: `black and white line art of ${theme}, coloring book style`,
+          prompt: "a simple black and white line drawing, clean outline, minimal detail, thick lines, coloring book style",
         }),
       });
 
