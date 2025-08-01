@@ -42,7 +42,7 @@ function App() {
         AI Coloring Book Generator
       </h1>
 
-      <div style={{ marginTop: 20, maxWidth: 400, margin: "0 auto" }}>
+      <div style={{ marginTop: 20 }}>
         <input
           type="text"
           value={theme}
@@ -50,18 +50,23 @@ function App() {
           placeholder="Enter theme (e.g. dinosaurs, jungle, cats)"
           style={{
             width: "100%",
-            padding: "10px",
+            padding: "12px",
             fontSize: "1rem",
-            marginBottom: "10px",
+            boxSizing: "border-box",
           }}
         />
+      </div>
+
+      <div style={{ marginTop: 10 }}>
         <button
           onClick={generateImage}
           disabled={loading}
           style={{
             width: "100%",
-            padding: "10px",
+            padding: "12px",
             fontSize: "1rem",
+            backgroundColor: "#f0f0f0",
+            border: "1px solid #ccc",
             cursor: loading ? "not-allowed" : "pointer",
           }}
         >
@@ -74,7 +79,7 @@ function App() {
           <img
             src={imageUrl}
             alt="Generated"
-            style={{ maxWidth: "100%", border: "1px solid #ccc", padding: 10 }}
+            style={{ maxWidth: "100%", border: "1px solid #ccc" }}
           />
         </div>
       )}
