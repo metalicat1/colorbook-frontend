@@ -42,23 +42,27 @@ function App() {
         AI Coloring Book Generator
       </h1>
 
-      <div style={{ marginTop: 20 }}>
+      <div style={{ marginTop: 20, maxWidth: 400, margin: "0 auto" }}>
         <input
           type="text"
           value={theme}
           onChange={(e) => setTheme(e.target.value)}
           placeholder="Enter theme (e.g. dinosaurs, jungle, cats)"
-          style={{ width: "100%", padding: 10, fontSize: "1rem" }}
+          style={{
+            width: "100%",
+            padding: "10px",
+            fontSize: "1rem",
+            marginBottom: "10px",
+          }}
         />
         <button
           onClick={generateImage}
           disabled={loading}
           style={{
-            marginTop: 10,
-            padding: 10,
-            fontSize: "1rem",
             width: "100%",
-            cursor: "pointer",
+            padding: "10px",
+            fontSize: "1rem",
+            cursor: loading ? "not-allowed" : "pointer",
           }}
         >
           {loading ? "Generating..." : "Generate Image"}
@@ -66,19 +70,12 @@ function App() {
       </div>
 
       {imageUrl && (
-        <div style={{ marginTop: 30 }}>
+        <div style={{ marginTop: 20, textAlign: "center" }}>
           <img
             src={imageUrl}
-            alt="Generated coloring page"
-            style={{ width: "100%", border: "1px solid #ccc", padding: 10 }}
+            alt="Generated"
+            style={{ maxWidth: "100%", border: "1px solid #ccc", padding: 10 }}
           />
-          <a
-            href={imageUrl}
-            download="coloring-page.png"
-            style={{ display: "block", marginTop: 10, textAlign: "center" }}
-          >
-            Download Image
-          </a>
         </div>
       )}
     </div>
